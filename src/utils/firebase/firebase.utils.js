@@ -6,17 +6,19 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDIo8eHYII_hyCytQ58s3CWGvwNLm_5ggI",
-    authDomain: "react-final-5cfa1.firebaseapp.com",
-    projectId: "react-final-5cfa1",
-    storageBucket: "react-final-5cfa1.appspot.com",
-    messagingSenderId: "855758278172",
-    appId: "1:855758278172:web:20d4616a2fb8c4c17219d9"
-  };
+  apiKey: 'AIzaSyDIo8eHYII_hyCytQ58s3CWGvwNLm_5ggI',
+  authDomain: 'react-final-5cfa1.firebaseapp.com',
+  projectId: 'react-final-5cfa1',
+  storageBucket: 'react-final-5cfa1.appspot.com',
+  messagingSenderId: '855758278172',
+  appId: '1:855758278172:web:20d4616a2fb8c4c17219d9',
+};
 
 const firebaseApp = initializeApp(firebaseConfig);
 
@@ -74,3 +76,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
