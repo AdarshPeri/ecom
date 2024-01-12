@@ -51,3 +51,6 @@ export const setCartItems = (cartItems) =>
 
 export const setIsCartOpen = (isCartOpen) =>
   createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, isCartOpen);
+
+  export const clearCart = () => 
+  createAction(CART_ACTION_TYPES.CLEAR_CART);
