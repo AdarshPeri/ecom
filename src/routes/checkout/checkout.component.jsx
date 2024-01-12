@@ -40,7 +40,7 @@ const Checkout = () => {
           <PaymentForm />
         </>
       ) : (
-        <span className='total'> Add items to cart for checkout. </span>
+        <span className='empty-cart'> Add items to cart for checkout. </span>
       )}
     </div>
   );
