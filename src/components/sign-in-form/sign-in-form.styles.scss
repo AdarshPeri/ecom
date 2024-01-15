@@ -11,4 +11,15 @@
     display: flex;
     justify-content: space-between;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 70vw;
+
+    button {
+      display: block;
+      opacity: 0.9;
+      min-width: 100px;
+      padding: 0 10px;
+    }
+  }
 }
